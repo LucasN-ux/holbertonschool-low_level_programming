@@ -1,11 +1,11 @@
 #include "main.h"
 
 /**
- * jack_bauer - table of 9
+ * times_table - table of 9
  * Return: void
  */
 
-void jack_bauer(void)
+void times_table(void)
 {
 	int n, i, result;
 
