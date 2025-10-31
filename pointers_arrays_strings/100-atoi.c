@@ -20,7 +20,7 @@ int _atoi(char *s)
 			sign *= -1;
 		}
 
-		if (s[i] >= '0' && s[i] <= '9')
+		else if (s[i] >= '0' && s[i] <= '9')
 		{
 			ent = ent * 10 + (s[i] - '0');
 			started = 1;
@@ -30,5 +30,5 @@ int _atoi(char *s)
 		i++;
 	}
 
-	return (sign * (int)ent);
+	return (ent * sign);
 }
