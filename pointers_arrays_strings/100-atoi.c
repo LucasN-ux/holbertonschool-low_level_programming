@@ -10,7 +10,7 @@ int _atoi(char *s)
 {
 	int i = 0;
 	int sign = 1;
-	int ent = 0;
+	unsigned int ent = 0;
 	int started = 0;
 
 	while (s[i] != '\0')
@@ -30,5 +30,5 @@ int _atoi(char *s)
 		i++;
 	}
 
-	return (ent * sign);
+	return (sign * (int)ent);
 }
