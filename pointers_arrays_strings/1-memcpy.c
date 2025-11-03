@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * s*_memset -  fills memory with a constant byte.
+ * _memcpy -  fills memory with a constant byte.
  * @dest: number to return
  * @src: copy to dest
  * @n: number allowed
