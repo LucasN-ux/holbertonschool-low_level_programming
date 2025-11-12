@@ -3,10 +3,10 @@
 #include <stdlib.h>
 
 /**
- * _calloc - allocates memory for an array
+ * array_range - allocates memory for an array
  * @min: number of elements
  * @max: size of array
- * Return: void *
+ * Return: int
  */
 
 int *array_range(int min, int max)
@@ -15,10 +15,11 @@ int *array_range(int min, int max)
 	unsigned int i;
 	unsigned int total;
 
-	if (min == 0 && max == 0)
-	{
+	if (min <= 0 && max <= 0)
 		return (NULL);
-	}
+
+	if (min >= max)
+		return (NULL);
 
 	total = max - min + 1;
 	ar = malloc(sizeof(int) * (total));
