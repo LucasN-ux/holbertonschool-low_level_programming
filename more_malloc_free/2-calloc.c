@@ -21,7 +21,7 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 	total = nmemb * size;
 
 	if (nmemb != 0 && total / nmemb != size)
-		return(NULL);
+		return (NULL);
 
 	ar = malloc(total);
 
