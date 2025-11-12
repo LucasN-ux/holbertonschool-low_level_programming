@@ -15,10 +15,10 @@ int *array_range(int min, int max)
 	unsigned int i;
 	unsigned int total;
 
-	if (min <= 0 && max <= 0)
+	if (min == 0 && max == 0)
 		return (NULL);
 
-	if (min >= max)
+	if (min > max)
 		return (NULL);
 
 	total = max - min + 1;
