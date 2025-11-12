@@ -3,42 +3,35 @@
 #include <stdlib.h>
 
 /**
- * _calloc - concatenates two strings.
- * @nmenb: number  of bytes of s2 to concatenate.
- * @size: number  of bytes of s2 to concatenate.
- * Return: char
+ * _calloc - allocates memory for an array
+ * @nmemb: number of elements
+ * @size: size of array
+ * Return: void *
  */
+
 void *_calloc(unsigned int nmemb, unsigned int size)
 {
-	unsigned int i, j;
-	int **grid;
+	unsigned int total;
+	void *ar;
+	unsigned int i;
 
 	if (nmemb <= 0 || size <= 0)
 		return (NULL);
 
-	grid = malloc(nmemb * sizeof(int *));
-	if (grid == NULL)
+	total = nmemb * size;
+
+	if (nmemb != 0 && total / nmemb != size)
+		return(NULL);
+
+	ar = malloc(total);
+
+	if (!ar)
 		return (NULL);
 
-	for (i = 0; i < size; i++)
+	for (i = 0; i < total; i++)
 	{
-		grid[i] = malloc(nmemb * sizeof(int));
-		if (grid[i] == NULL)
-		{
-			while (i > 0)
-			{
-				i--;
-				free(grid[i]);
-			}
-			free(grid);
-			return (NULL);
-		}
-
-		for (j = 0; j < size; j++)
-		{
-			grid[i][j] = 0;
-		}
+		((char *)ar)[i] = 0;
 	}
-	return (grid);
-}
 
+	return (ar);
+}
