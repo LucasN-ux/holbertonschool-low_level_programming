@@ -7,8 +7,13 @@
  * @s: pointer two integers
  * Return: int
  */
-int main(void)
+int main(int argc, char *argv[])
 {
-
+	if (argc != 4)
+	{
+		printf("Error\n");
+		return(98);
+	}
+	
 	return (0);
 }
