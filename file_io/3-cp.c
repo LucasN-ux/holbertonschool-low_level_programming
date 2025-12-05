@@ -12,6 +12,7 @@ void error_97(void)
 
 /**
  * error_98 - prints error message and exits
+ * @file: file name
  * Return: error 98
  */
 void error_98(char *file)
@@ -22,6 +23,7 @@ void error_98(char *file)
 
 /**
  * error_99 - prints error message and exits
+ * @file: file name
  * Return: error 99
  */
 void error_99(char *file)
@@ -32,6 +34,7 @@ void error_99(char *file)
 
 /**
  * error_100 - prints error message and exits
+ * @fdescriptor: file descriptor
  * Return: error 100
  */
 void error_100(int fdescriptor)
@@ -63,7 +66,6 @@ int main(int argc, char *argv[])
 		close(file_from);
 		error_99(argv[2]);
 	}
-
 	while ((r = read(file_from, buffer, 1024)) > 0)
 	{
 		w = write(file_to, buffer, r);
@@ -74,23 +76,17 @@ int main(int argc, char *argv[])
 			error_99(argv[2]);
 		}
 	}
-
 	if (r == -1)
 	{
 		close(file_from);
 		close(file_to);
 		error_98(argv[1]);
 	}
-
 	if (close(file_from) == -1)
-	{
 		error_100(file_from);
-	}
 
 	if (close(file_to) == -1)
-	{
 		error_100(file_to);
-	}
 
 	return (0);
 }
